@@ -11,7 +11,9 @@ public class ThreadLambdaExpression {
 				System.out.println("Hi");
 				try { Thread.sleep(1000); } catch (InterruptedException e) { e.printStackTrace(); }
 			}
-		});
+		}, "Hi thread");
+		
+		//Passing Runnable object and Thread name
 		
 		Thread t2 = new Thread(() ->  
 		{
@@ -19,7 +21,17 @@ public class ThreadLambdaExpression {
 				System.out.println("Hello");
 				try { Thread.sleep(1000); } catch (InterruptedException e) { e.printStackTrace(); }
 			}
-		});
+		}, "Hello thread");
+		
+		//Naming threads- For managing threads
+		System.out.println(t1.getName());
+		System.out.println(t2.getName());
+		
+		//Ranging from 1-10 (MIN_PRIORITY-MAX_PRIORITY)
+		t1.setPriority(Thread.MIN_PRIORITY);
+		t2.setPriority(Thread.MAX_PRIORITY);
+		System.out.println(t1.getPriority());
+		System.out.println(t2.getPriority());
 		
 		t1.start();
 		try { Thread.sleep(10); } catch (InterruptedException e) { e.printStackTrace(); }
