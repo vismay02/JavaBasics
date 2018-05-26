@@ -14,16 +14,12 @@ public class WrapperDemo {
 
 		int k = value; // AutoUnboxing
 
-		String str = "123"+2;
+		String str = "123" + 2;
 		int n = Integer.parseInt(str); // as parseInt is static method we need Class name to access it.
 		System.out.println(n);
-		
-		String s = "2"+(2-2);
+
+		String s = "2" + (2 - 2);
 		System.out.println(s);
-	
-
-		// Hibernate, connectionAPI only use Wrapper classes.
-
 	}
 
 }
